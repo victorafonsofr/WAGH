@@ -25,7 +25,7 @@
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>Formularios2024BD</servlet-name>
+        <servlet-name>WAGH</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
@@ -33,7 +33,7 @@
     </servlet>
 
     <servlet-mapping>
-       <servlet-name>Formularios2024BD</servlet-name>
+       <servlet-name>WAGH</servlet-name>
        <url-pattern>/</url-pattern>
     </servlet-mapping>
     
