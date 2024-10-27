@@ -1,40 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.aplicacao.model;
 
 import com.aplicacao.conexao.ConexaoMySQL;
 import com.aplicacao.dao.Cliente;
 import java.sql.*;
-import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author aluno
- */
 public class ClienteModel {
     
      public static void main(String[] args) {
          ClienteModel teste = new ClienteModel();
-    
-   /* 
-    Cliente novoCliente = new Cliente();
-    novoCliente.setNome_cliente("Fulano bill");
-    novoCliente.setSexo('M');
-    novoCliente.setCadastro("fulanobill@gmail.com");
-    novoCliente.setRg("12345678");
-    novoCliente.setData_nasc(LocalDate.of(1990, 5, 15)); 
-    novoCliente.setCpf("12345678900");
-    
-    String resultado = teste.inserirCliente(novoCliente);
-    System.out.println(resultado);
-    
-*/}
+}
 
     public Cliente consultarClienteCodigo(int cod_cliente) {
         ConexaoMySQL conexao = new ConexaoMySQL();
