@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/custom.css" rel="stylesheet" />
@@ -33,11 +33,9 @@
             </div>
 
             <div class="header-right">
-
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
-
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -47,34 +45,30 @@
                     <li>
                         <div class="user-img-div">
                             <img src="${pageContext.request.contextPath}/resources/assets/img/user.png" class="img-thumbnail" />
-
                             <div class="inner-text">
                                 Jhon Deo Alex
                             <br />
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>
                         </div>
-
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-desktop "></i>Cliente <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="insert-cliente"><i class="fa fa-plus"></i>Inserir um Cliente</a>
+                                <a href="insert-cliente.html"><i class="fa fa-plus"></i>Inserir um Cliente</a>
                             </li>
                             <li>
-                                <a href="consult-cliente"><i class="fa fa-search"></i>Consultar um Cliente</a>
+                                <a href="consult-cliente.html"><i class="fa fa-search"></i>Consultar um Cliente</a>
                             </li>
                             <li>
-                                <a href="consult-all-clientes"><i class="fa fa-list"></i>Consultar Todos os Clientes</a>
+                                <a href="consult-all-clientes.html"><i class="fa fa-list"></i>Consultar Todos os Clientes</a>
                             </li>
                             <li>
-                                <a href="remove-cliente"><i class="fa fa-trash"></i>Remover um Cliente</a>
+                                <a href="remove-cliente.html"><i class="fa fa-trash"></i>Remover um Cliente</a>
                             </li>
                             <li>
-                                <a href="update-cliente"><i class="fa fa-pencil"></i>Alterar Dados do Cliente</a>
+                                <a href="update-cliente.html"><i class="fa fa-pencil"></i>Alterar Dados do Cliente</a>
                             </li>
                         </ul>
                     </li>
@@ -162,34 +156,137 @@
                             </li>
                         </ul>
                     </li>
-                   
-
+                    <!-- Outros menus omitidos para brevidade -->
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <!-- /. ROW  -->
-                
-                <!-- /. ROW  -->
-
-               
-                <!-- /. ROW  -->
-
-
         
-                <!--/.Row-->
-               
-                    
-                
-                <!--/.ROW-->
-
+                <h2>Inserir Pacote</h2>
+                <form id="packageForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="destination" class="control-label col-sm-2">Destino:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="destination" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="departureDate" class="control-label col-sm-2">Data de Partida:</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="departureDate" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="origin" class="control-label col-sm-2">Origem:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="origin" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="returnDate" class="control-label col-sm-2">Data de Volta:</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="returnDate" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="control-label col-sm-2">PreÃ§o:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="price" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="company" class="control-label col-sm-2">Companhia:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="company" placeholder="Opcional">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="companyType" class="control-label col-sm-2">Tipo da Companhia:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="companyType" required>
+                                <option value="">Selecione um Tipo</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="airplane" class="control-label col-sm-2">AviÃ£o:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="airplane" placeholder="Opcional">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ship" class="control-label col-sm-2">Navio:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="ship" placeholder="Opcional">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="capacity" class="control-label col-sm-2">Capacidade:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="capacity" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="route" class="control-label col-sm-2">Percurso:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="route" rows="3" placeholder="Opcional"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="shipClass" class="control-label col-sm-2">Classe do Navio:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="shipClass" placeholder="Opcional">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Cadastrar Pacote</button>
+                        </div>
+                    </div>
+                </form>
+        
+                <script>
+                    // FunÃ§Ã£o para cadastrar o pacote
+                    document.getElementById('packageForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Evita o envio do formulÃ¡rio
+        
+                        const packageData = {
+                            destination: document.getElementById('destination').value,
+                            departureDate: document.getElementById('departureDate').value,
+                            origin: document.getElementById('origin').value,
+                            returnDate: document.getElementById('returnDate').value,
+                            price: document.getElementById('price').value,
+                            company: document.getElementById('company').value || null,
+                            companyType: document.getElementById('companyType').value || null,
+                            airplane: document.getElementById('airplane').value || null,
+                            ship: document.getElementById('ship').value || null,
+                            capacity: document.getElementById('capacity').value,
+                            route: document.getElementById('route').value || null,
+                            shipClass: document.getElementById('shipClass').value || null
+                        };
+        
+                        // Aqui vocÃª pode fazer uma chamada para enviar os dados do pacote para o servidor
+        
+                        console.log('Pacote cadastrado:', packageData);
+                        alert('Pacote cadastrado com sucesso!');
+                        
+                        // Limpar o formulÃ¡rio apÃ³s o envio
+                        this.reset();
+                    });
+                </script>
+        
             </div>
             <!-- /. PAGE INNER  -->
         </div>
+        
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
@@ -205,10 +302,7 @@
     <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.metisMenu.js"></script>
-       <!-- CUSTOM SCRIPTS -->
+    <!-- CUSTOM SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/custom.js"></script>
-    
-
-
 </body>
 </html>

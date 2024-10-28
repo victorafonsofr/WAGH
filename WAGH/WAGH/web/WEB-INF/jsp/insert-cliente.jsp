@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/custom.css" rel="stylesheet" />
@@ -33,11 +33,9 @@
             </div>
 
             <div class="header-right">
-
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
-
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -45,19 +43,15 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
-                        <div class="user-img-div">
-                            <img src="${pageContext.request.contextPath}/resources/assets/img/user.png" class="img-thumbnail" />
-
+                        <div class="${pageContext.request.contextPath}/resources/user-img-div">
+                            <img src="assets/img/user.png" class="img-thumbnail" />
                             <div class="inner-text">
                                 Jhon Deo Alex
                             <br />
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>
                         </div>
-
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-desktop "></i>Cliente <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -162,30 +156,65 @@
                             </li>
                         </ul>
                     </li>
-                   
-
+                    <!-- Outros menus omitidos para brevidade -->
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <!-- /. ROW  -->
                 
-                <!-- /. ROW  -->
-
-               
-                <!-- /. ROW  -->
-
-
-        
-                <!--/.Row-->
-               
-                    
-                
-                <!--/.ROW-->
+                <!-- Formulário para adicionar um cliente -->
+                <h2>Inserir Cliente</h2>
+                <form id="clientForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="control-label col-sm-2">Nome:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="control-label col-sm-2">Sexo:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="gender" required>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="control-label col-sm-2">Cadastro (Email):</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="rg" class="control-label col-sm-2">RG:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="rg" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate" class="control-label col-sm-2">Data de Nascimento:</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="birthdate" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf" class="control-label col-sm-2">CPF:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cpf" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- Fim do formulário -->
 
             </div>
             <!-- /. PAGE INNER  -->
@@ -205,10 +234,7 @@
     <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.metisMenu.js"></script>
-       <!-- CUSTOM SCRIPTS -->
+    <!-- CUSTOM SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/custom.js"></script>
-    
-
-
 </body>
 </html>

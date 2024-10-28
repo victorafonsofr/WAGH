@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Formul·rio</title>
+        <title>Formul√°rio</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/estilo.css" />
 
     </head>
@@ -39,7 +38,7 @@
                     <form:errors path = "cliCPF" cssClass="erro" />
                 </div>
                 <div class="input-group">
-                    <form:label path= "cliDescricao">DescriÁ„o</form:label>
+                    <form:label path= "cliDescricao">Descri√ß√£o</form:label>
 
                     <form:textarea path = "cliDescricao" id="texto" />
                 </div>

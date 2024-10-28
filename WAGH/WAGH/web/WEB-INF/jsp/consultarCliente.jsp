@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Formul�rio</title>
+        <title>Formulï¿½rio</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/estilo.css" />
         
     </head>
@@ -17,7 +15,7 @@
                 <form:errors path = "*" cssClass = "blocoerro" element = "div" />
                 <center><img width="40%" src="${pageContext.request.contextPath}/resources/images/figura.png"></center>
                 <legend>
-                    Informa��o do cliente
+                    Informaï¿½ï¿½o do cliente
                 </legend>
                 <div class="input-group">
                     <form:label path= "cliCodigo">Nome</form:label>
@@ -34,7 +32,7 @@
             
             <br> 
             <legend>
-                Dados Enviados pelo usu�rio
+                Dados Enviados pelo usuï¿½rio
             </legend>
             <div class="input-group">
                 Nome: ${cliNome}
@@ -49,7 +47,7 @@
                 Sexo: ${(cliSexo=="0"? "Masculino" : "Feminino")}
             </div>
             <div class="input-group">
-                C�gido ${cliCodigo}
+                Cï¿½gido ${cliCodigo}
             </div>
            
             </form:form>

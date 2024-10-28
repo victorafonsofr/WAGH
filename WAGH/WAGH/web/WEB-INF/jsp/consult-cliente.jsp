@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/custom.css" rel="stylesheet" />
@@ -33,11 +33,9 @@
             </div>
 
             <div class="header-right">
-
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
-
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -47,17 +45,13 @@
                     <li>
                         <div class="user-img-div">
                             <img src="${pageContext.request.contextPath}/resources/assets/img/user.png" class="img-thumbnail" />
-
                             <div class="inner-text">
                                 Jhon Deo Alex
                             <br />
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>
                         </div>
-
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-desktop "></i>Cliente <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -162,34 +156,99 @@
                             </li>
                         </ul>
                     </li>
-                   
-
+                    <!-- Outros menus omitidos para brevidade -->
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <!-- /. ROW  -->
                 
-                <!-- /. ROW  -->
-
-               
-                <!-- /. ROW  -->
-
-
+                <h2>Consultar Cliente</h2>
+                <form id="searchClientForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="clientName" class="control-label col-sm-2">Selecione o Nome:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="clientName" required>
+                                <option value="">Selecione um Cliente</option>
+                                <!-- Exemplo de opÃ§Ãµes, vocÃª pode preencher dinamicamente com JavaScript -->
+                                <option value="cliente1">Cliente 1</option>
+                                <option value="cliente2">Cliente 2</option>
+                                <option value="cliente3">Cliente 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-primary" onclick="consultClient()">Consultar</button>
+                        </div>
+                    </div>
+                </form>
         
-                <!--/.Row-->
-               
-                    
+                <div id="clientInfo" class="well" style="display:none;">
+                    <h3>InformaÃ§Ãµes do Cliente</h3>
+                    <p><strong>Nome:</strong> <span id="infoName"></span></p>
+                    <p><strong>Sexo:</strong> <span id="infoGender"></span></p>
+                    <p><strong>Email:</strong> <span id="infoEmail"></span></p>
+                    <p><strong>RG:</strong> <span id="infoRg"></span></p>
+                    <p><strong>Data de Nascimento:</strong> <span id="infoBirthdate"></span></p>
+                    <p><strong>CPF:</strong> <span id="infoCpf"></span></p>
+                </div>
                 
-                <!--/.ROW-->
-
+                <script>
+                    // FunÃ§Ã£o para simular a consulta ao cliente
+                    function consultClient() {
+                        const clientName = document.getElementById('clientName').value;
+                        
+                        // Aqui vocÃª pode buscar os dados do cliente de um banco de dados ou um array
+                        const clients = {
+                            cliente1: {
+                                name: "Cliente 1",
+                                gender: "Masculino",
+                                email: "cliente1@example.com",
+                                rg: "12.345.678-9",
+                                birthdate: "1990-01-01",
+                                cpf: "123.456.789-00"
+                            },
+                            cliente2: {
+                                name: "Cliente 2",
+                                gender: "Feminino",
+                                email: "cliente2@example.com",
+                                rg: "98.765.432-1",
+                                birthdate: "1992-02-02",
+                                cpf: "987.654.321-00"
+                            },
+                            cliente3: {
+                                name: "Cliente 3",
+                                gender: "Outro",
+                                email: "cliente3@example.com",
+                                rg: "11.223.344-5",
+                                birthdate: "1995-03-03",
+                                cpf: "112.233.445-66"
+                            }
+                        };
+        
+                        // Exibir as informaÃ§Ãµes do cliente selecionado
+                        if (clients[clientName]) {
+                            const client = clients[clientName];
+                            document.getElementById('infoName').innerText = client.name;
+                            document.getElementById('infoGender').innerText = client.gender;
+                            document.getElementById('infoEmail').innerText = client.email;
+                            document.getElementById('infoRg').innerText = client.rg;
+                            document.getElementById('infoBirthdate').innerText = client.birthdate;
+                            document.getElementById('infoCpf').innerText = client.cpf;
+                            document.getElementById('clientInfo').style.display = 'block';
+                        } else {
+                            alert("Cliente nÃ£o encontrado.");
+                        }
+                    }
+                </script>
+        
             </div>
             <!-- /. PAGE INNER  -->
         </div>
+        
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
@@ -205,10 +264,7 @@
     <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.metisMenu.js"></script>
-       <!-- CUSTOM SCRIPTS -->
+    <!-- CUSTOM SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/custom.js"></script>
-    
-
-
 </body>
 </html>

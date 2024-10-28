@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -12,7 +12,7 @@
     <link href="${pageContext.request.contextPath}/resources/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/font-awesome.css" rel="stylesheet" />
-       <!--CUSTOM BASIC STYLES-->
+    <!--CUSTOM BASIC STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/basic.css" rel="stylesheet" />
     <!--CUSTOM MAIN STYLES-->
     <link href="${pageContext.request.contextPath}/resources/assets/css/custom.css" rel="stylesheet" />
@@ -33,11 +33,9 @@
             </div>
 
             <div class="header-right">
-
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
-
             </div>
         </nav>
         <!-- /. NAV TOP  -->
@@ -47,34 +45,30 @@
                     <li>
                         <div class="user-img-div">
                             <img src="${pageContext.request.contextPath}/resources/assets/img/user.png" class="img-thumbnail" />
-
                             <div class="inner-text">
                                 Jhon Deo Alex
                             <br />
                                 <small>Last Login : 2 Weeks Ago </small>
                             </div>
                         </div>
-
                     </li>
-
-
                     <li>
                         <a href="#"><i class="fa fa-desktop "></i>Cliente <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="insert-cliente"><i class="fa fa-plus"></i>Inserir um Cliente</a>
+                                <a href="insert-cliente.html"><i class="fa fa-plus"></i>Inserir um Cliente</a>
                             </li>
                             <li>
-                                <a href="consult-cliente"><i class="fa fa-search"></i>Consultar um Cliente</a>
+                                <a href="consult-cliente.html"><i class="fa fa-search"></i>Consultar um Cliente</a>
                             </li>
                             <li>
-                                <a href="consult-all-clientes"><i class="fa fa-list"></i>Consultar Todos os Clientes</a>
+                                <a href="consult-all-clientes.html"><i class="fa fa-list"></i>Consultar Todos os Clientes</a>
                             </li>
                             <li>
-                                <a href="remove-cliente"><i class="fa fa-trash"></i>Remover um Cliente</a>
+                                <a href="remove-cliente.html"><i class="fa fa-trash"></i>Remover um Cliente</a>
                             </li>
                             <li>
-                                <a href="update-cliente"><i class="fa fa-pencil"></i>Alterar Dados do Cliente</a>
+                                <a href="update-cliente.html"><i class="fa fa-pencil"></i>Alterar Dados do Cliente</a>
                             </li>
                         </ul>
                     </li>
@@ -162,34 +156,59 @@
                             </li>
                         </ul>
                     </li>
-                   
-
+                    <!-- Outros menus omitidos para brevidade -->
                 </ul>
-
             </div>
-
         </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <!-- /. ROW  -->
+                <h2>Inserir Cidade</h2>
+                <form id="cityForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="cityName" class="control-label col-sm-2">Nome da Cidade:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cityName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="state" class="control-label col-sm-2">Estado:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="state" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="control-label col-sm-2">PaÃ­s:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="country" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Cadastrar Cidade</button>
+                        </div>
+                    </div>
+                </form>
                 
-                <!-- /. ROW  -->
-
-               
-                <!-- /. ROW  -->
-
-
+                <script>
+                    document.getElementById('cityForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const cityName = document.getElementById('cityName').value;
+                        const state = document.getElementById('state').value;
+                        const country = document.getElementById('country').value;
         
-                <!--/.Row-->
-               
-                    
-                
-                <!--/.ROW-->
-
+                        // SimulaÃ§Ã£o de cadastro de cidade
+                        alert(`Cidade ${cityName} em ${state}, ${country} cadastrada com sucesso!`);
+        
+                        // Limpa o formulÃ¡rio apÃ³s o cadastro
+                        this.reset();
+                    });
+                </script>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
+        
+        
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
@@ -205,10 +224,7 @@
     <script src="${pageContext.request.contextPath}/resources/assets/js/bootstrap.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/jquery.metisMenu.js"></script>
-       <!-- CUSTOM SCRIPTS -->
+    <!-- CUSTOM SCRIPTS -->
     <script src="${pageContext.request.contextPath}/resources/assets/js/custom.js"></script>
-    
-
-
 </body>
 </html>
